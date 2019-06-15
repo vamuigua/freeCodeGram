@@ -9,10 +9,10 @@
         <div class="col-9 pt-5">
             <div class="d-flex justify-content-between align-items-baseline">
                 <h1>{{ $user->username }}</h1>
-                <a href="#">Add New Post</a>
+                <a href="/p/create">Add New Post</a>
             </div>
             <div class="d-flex">
-                <div class="pr-5"><strong>153</strong> posts</div>
+                <div class="pr-5"><strong>{{ $user->posts->count() }}</strong> posts</div>
                 <div class="pr-5"><strong>23k</strong> followers</div>
                 <div class="pr-5"><strong>212</strong> following</div>
             </div>
@@ -22,15 +22,10 @@
         </div>
     </div>
     <div class="row pt-5">
-        <div class="col-4">
-            <img src="https://instagram.fnbo5-1.fna.fbcdn.net/vp/b514b1c9070bd76c8eb03e9de668df50/5D8B454B/t51.2885-15/sh0.08/e35/c0.74.877.877a/s640x640/61129659_484895502256050_2457635576497186056_n.jpg?_nc_ht=instagram.fnbo5-1.fna.fbcdn.net" class="w-100">
-        </div>
-        <div class="col-4">
-            <img src="https://instagram.fnbo5-1.fna.fbcdn.net/vp/33227c6cbb95510dd5614b542e821832/5D991213/t51.2885-15/sh0.08/e35/c0.0.749.749a/s640x640/62405980_352431338752162_8074657814463950764_n.jpg?_nc_ht=instagram.fnbo5-1.fna.fbcdn.net" class="w-100">
-        </div>
-        <div class="col-4">
-            <img src="https://instagram.fnbo5-1.fna.fbcdn.net/vp/ea9ca0ae93fb52216b9a7c9e3d764afb/5D9C4049/t51.2885-15/sh0.08/e35/c0.78.883.883a/s640x640/60721114_308501250092136_1832984087716609793_n.jpg?_nc_ht=instagram.fnbo5-1.fna.fbcdn.net" class="w-100">
-        </div>
-    </div>
+        @foreach($user->posts as $post)
+            <div class="col-4 pb-4">
+                <img src="/storage/{{ $post->image }}" class="w-100">
+            </div>
+        @endforeach
 </div>
 @endsection
