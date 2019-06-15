@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class PostsController extends Controller
 {
@@ -25,8 +26,12 @@ class PostsController extends Controller
     		'image' => ['required', 'image'],
     	]);
 
-        //save instance image path
+        //save instance of image to uploads path
         $imagePath = request('image')->store('uploads', 'public');
+
+        //resize the image
+        $image = Image::make(public_path("storage/{$imagePath}"))->fit(1200, 1200);
+        $image->save();
 
         //authenticate user before creating posts and save the post
         auth()->user()->posts()->create([
