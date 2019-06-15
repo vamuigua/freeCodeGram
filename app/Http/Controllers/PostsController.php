@@ -42,4 +42,9 @@ class PostsController extends Controller
         //redirect to authenticated user's profile
     	return redirect('/profile/' . auth()->user()->id);
     }
+
+    //showing a particular post
+    public function show(\App\Post $post){
+        return view('posts.show', compact('post'));
+    }
 }
