@@ -5,8 +5,6 @@ A replica of Instagram using Laravel Framework
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-Open Terminal and clone the project with git by typing
-
 ### Prerequisites
 
 What things you need to install the software and how to install them
