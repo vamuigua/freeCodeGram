@@ -13,7 +13,7 @@ What things you need to install the software and how to install them
 
 ```
 * Composer 1.8.6 or latest
-* Laravel 2.1.0 or latest
+* Laravel 5.8 or latest
 * npm 6.9.0 or latest
 * Node.js 10.16.0 or latest
 ```
